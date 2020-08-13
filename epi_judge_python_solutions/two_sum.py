@@ -17,7 +17,9 @@ def has_two_sum(A: List[int], t: int) -> bool:
     return False
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     exit(
-        generic_test.generic_test_main('two_sum.py', 'two_sum.tsv',
-                                       has_two_sum))
+        generic_test.generic_test_main(
+            "two_sum.py", "two_sum.tsv", has_two_sum
+        )
+    )

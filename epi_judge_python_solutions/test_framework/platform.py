@@ -5,7 +5,7 @@ ENABLE_COLOR_OUTPUT = False
 
 
 def std_out_clear_line():
-    print(end='\r')
+    print(end="\r")
 
 
 def set_output_opts(tty_mode, color_mode):
@@ -25,10 +25,10 @@ def use_color_output():
 
 
 def running_on_win():
-    return sys.platform == 'win32'
+    return sys.platform == "win32"
 
 
-if sys.platform == 'win32':
+if sys.platform == "win32":
     try:
         import ctypes
         from ctypes import LibraryLoader
@@ -45,6 +45,7 @@ if sys.platform == 'win32':
 
         class ConsoleScreenBufferInfo(Structure):
             """struct in wincon.h."""
+
             _fields_ = [
                 ("dwSize", COORD),
                 ("dwCursorPosition", COORD),
@@ -59,7 +60,9 @@ if sys.platform == 'win32':
         ]
         _GetStdHandle.restype = wintypes.HANDLE
 
-        _GetConsoleScreenBufferInfo = windll.kernel32.GetConsoleScreenBufferInfo
+        _GetConsoleScreenBufferInfo = (
+            windll.kernel32.GetConsoleScreenBufferInfo
+        )
         _GetConsoleScreenBufferInfo.argtypes = [
             wintypes.HANDLE,
             POINTER(ConsoleScreenBufferInfo),

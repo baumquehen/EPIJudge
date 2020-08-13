@@ -8,7 +8,9 @@ def calculate_bonus(productivity: List[int]) -> int:
     return 0
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     exit(
-        generic_test.generic_test_main('bonus.py', 'bonus.tsv',
-                                       calculate_bonus))
+        generic_test.generic_test_main(
+            "bonus.py", "bonus.tsv", calculate_bonus
+        )
+    )
